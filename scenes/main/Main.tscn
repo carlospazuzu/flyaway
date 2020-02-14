@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/player/Go.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entities/ground/Ground.tscn" type="PackedScene" id=2]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+
+[node name="Go" parent="." instance=ExtResource( 1 )]
+position = Vector2( 121, 402 )
