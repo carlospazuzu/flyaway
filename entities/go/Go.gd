@@ -25,6 +25,13 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_down"):
 		current_position += 1
 		
+	if Input.is_action_just_pressed("increase_speed"):
+		$'/root/Globals'.current_speed = $'/root/Globals'.base_speed * 3
+		$'/root/Main/TravelledDistance/Timer'.wait_time = 0.25
+	if Input.is_action_just_released("increase_speed"):
+		$'/root/Globals'.current_speed = $'/root/Globals'.base_speed
+		$'/root/Main/TravelledDistance/Timer'.wait_time = 1
+		
 	current_position = int(clamp(current_position, 0, 2))
 	
 	position = possible_positions[current_position]

@@ -2,7 +2,7 @@ extends Node
 
 
 var current_speed: float = 200.0
-
+var base_speed: float = 200.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
