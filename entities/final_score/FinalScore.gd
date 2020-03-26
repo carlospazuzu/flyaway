@@ -51,6 +51,7 @@ func _process(delta):
 		$"/root/Main/TravelledDistance".set_process(true)
 		$"/root/Main/TravelledDistance".start_timer()
 		$"/root/Main/Go".position = Vector2(100, 465)
+		$"/root/Main/Go".reset_flying_sound()
 		$"/root/Main/Go".set_process(true)
 		$"/root/Main/GameTimer".time_passed = 0
 		$"/root/Main/GameTimer".start()	

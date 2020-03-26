@@ -25,8 +25,10 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("ui_up"):
 		current_position -= 1
+		$"/root/Main/TeleportSFX".play()
 	if Input.is_action_just_pressed("ui_down"):
 		current_position += 1	
+		$"/root/Main/TeleportSFX".play()
 		
 	if Input.is_action_just_pressed("increase_speed"):
 		$'/root/Globals'.current_speed = $'/root/Globals'.base_speed * 3
@@ -56,6 +58,10 @@ func _draw():
 	# draw_rect(Rect2($CollisionShape2D.position - (size / 2), size), Color("#F9DC5C"), true)
 
 
+func reset_flying_sound():
+	$"/root/Main/FlyingSFX".stream = normal_speed_sound
+	$"/root/Main/FlyingSFX".play()
+
 
 func set_player_position(x, y):
 	$CollisionShape2D.position = Vector2(x, y)
@@ -71,7 +77,12 @@ func _on_Go_area_entered(area):
 	$"/root/Main/TravelledDistance".set_process(false)
 	$"/root/Main/TravelledDistance".stop_timer()
 	self.set_process(false)
-	$"/root/Main/GameTimer".stop()
+	$"/root/Main/GameTimer".stop()	
+	
+	$'/root/Main/CrashFX'.just_crashed = true
+	$'/root/Main/CrashSFX'.play()
+	
+	$"/root/Main/FlyingSFX".stop()
 	
 	$AnimatedSprite.animation = "stop"
 	$"/root/Main/Background".stop_parallax()

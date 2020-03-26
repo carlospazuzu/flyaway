@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://entities/background/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/travelled_distance/TravelledDistance.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://entities/final_score/FinalScore.tscn" type="PackedScene" id=5]
 [ext_resource path="res://entities/game_timer/GameTimer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://resources/audio/flying-geo.wav" type="AudioStream" id=7]
+[ext_resource path="res://resources/audio/teleport.wav" type="AudioStream" id=8]
+[ext_resource path="res://crash_fx/CrashFX.tscn" type="PackedScene" id=9]
+[ext_resource path="res://resources/audio/crash.wav" type="AudioStream" id=10]
 
 [node name="Main" type="Node2D"]
 
@@ -33,3 +36,14 @@ stream = ExtResource( 7 )
 pitch_scale = 0.93
 autoplay = true
 attenuation = 0.129408
+
+[node name="TeleportSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+volume_db = -11.0
+attenuation = 0.0371627
+
+[node name="CrashFX" parent="." instance=ExtResource( 9 )]
+
+[node name="CrashSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+volume_db = -5.0
