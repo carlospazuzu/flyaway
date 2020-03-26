@@ -5,7 +5,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "Parallax"
-length = 5.0
+length = 10.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:position")
@@ -14,7 +14,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 0, 10 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 872.636, 299.956 ), Vector2( -872.344, 299.942 ) ]
@@ -26,7 +26,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 0, 10 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 2609.42, 299.956 ), Vector2( 872.636, 299.956 ) ]

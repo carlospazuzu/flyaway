@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/flying-geo.wav-9421647c407c9bcfe3b1226b5ebbacd8.sample"
+
+[deps]
+
+source_file="res://resources/audio/flying-geo.wav"
+dest_files=[ "res://.import/flying-geo.wav-9421647c407c9bcfe3b1226b5ebbacd8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

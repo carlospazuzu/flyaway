@@ -30,7 +30,8 @@ func _process(delta):
 	
 	$"SCORE_COUNT".text = str(total_score)
 	
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and not $"/root/Globals".is_playing:
+		$"/root/Globals".is_playing = true
 		$"/root/Globals".current_speed = 200.0
 		$"/root/Globals".base_speed = 200.0
 		
