@@ -1,4 +1,4 @@
-extends Obstacle
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -8,14 +8,16 @@ extends Obstacle
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.size = Vector2(130, 130)
-	self.color = Color(1 / 255.0, 1 / 255.0, 1 / 255.0, 1 / 255.0)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	._process(delta)
-	update()
-	pass
+	if Input.is_action_just_pressed("ui_accept"):
+		get_tree().change_scene("res://scenes/main/Main.tscn")
+		
 
+
+func _on_Timer_timeout():
+	$"PRESS SPACE".visible = not $"PRESS SPACE".visible
+	pass # Replace with function body.

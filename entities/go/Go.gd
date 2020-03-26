@@ -23,7 +23,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_up"):
 		current_position -= 1
 	if Input.is_action_just_pressed("ui_down"):
-		current_position += 1
+		current_position += 1	
 		
 	if Input.is_action_just_pressed("increase_speed"):
 		$'/root/Globals'.current_speed = $'/root/Globals'.base_speed * 3
@@ -31,7 +31,7 @@ func _process(delta):
 	if Input.is_action_just_released("increase_speed"):
 		$'/root/Globals'.current_speed = $'/root/Globals'.base_speed
 		$'/root/Main/TravelledDistance/Timer'.wait_time = 1
-		
+	
 	current_position = int(clamp(current_position, 0, 2))
 	
 	position = possible_positions[current_position]
@@ -42,7 +42,8 @@ func _process(delta):
 
 
 func _draw():
-	draw_rect(Rect2($CollisionShape2D.position - (size / 2), size), Color("#F9DC5C"), true)
+	pass
+	# draw_rect(Rect2($CollisionShape2D.position - (size / 2), size), Color("#F9DC5C"), true)
 
 
 
@@ -50,7 +51,21 @@ func set_player_position(x, y):
 	$CollisionShape2D.position = Vector2(x, y)
 
 
+func start_animation():
+	$AnimatedSprite.animation = 'default'
+
 
 func _on_Go_area_entered(area):
-	print('PEI')
+	$"/root/Main/ObstacleGenerator".stop_timer()
+	$"/root/Main/TravelledDistance".set_process(false)
+	$"/root/Main/TravelledDistance".stop_timer()
+	self.set_process(false)
+	$"/root/Main/GameTimer".stop()
+	
+	$AnimatedSprite.animation = "stop"
+	$"/root/Main/Background".stop_parallax()
+	
+	for obstacle in $"/root/Main/Obstacles".get_children():
+		obstacle.set_process(false)
+	$"/root/Main/FinalScore".visible = true
 	pass # Replace with function body.

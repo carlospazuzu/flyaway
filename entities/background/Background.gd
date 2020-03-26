@@ -8,6 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimationPlayer.play("Parallax")
 	pass # Replace with function body.
 
 
@@ -15,8 +16,16 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func stop_parallax():
+	$AnimationPlayer.stop()
+
+
+func start_parallax():
+	$AnimationPlayer.play("Parallax")
+
 func _draw():
+	pass
 	# draws sky
-	draw_rect(Rect2(Vector2(0, 0), Vector2(1024, 600)), Color("#3185FC"), true)
+	# draw_rect(Rect2(Vector2(0, 0), Vector2(1024, 600)), Color("#3185FC"), true)
 	# draws ground
-	draw_rect(Rect2(Vector2(0, 550), Vector2(1024, 50)), Color("#6D1A36"), true)
+	# draw_rect(Rect2(Vector2(0, 550), Vector2(1024, 50)), Color("#6D1A36"), true)

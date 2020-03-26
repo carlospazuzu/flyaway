@@ -14,6 +14,17 @@ func _process(delta):
 	$TravelledDistanceText.text = str(self.travelled_distance) + ' m'
 #	pass
 
+func get_travelled_distance():
+	return self.travelled_distance
+	
+
+func stop_timer():
+	$Timer.stop()
+	
+
+func start_timer():
+	$Timer.start()
+
 
 func _on_Timer_timeout():
 	self.travelled_distance += 10

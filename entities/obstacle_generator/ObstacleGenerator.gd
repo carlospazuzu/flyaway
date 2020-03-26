@@ -14,6 +14,13 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func stop_timer():
+	$Timer.stop()
+	
+	
+func start_timer():
+	$Timer.start()
+
 
 func _on_Timer_timeout():
 	$Timer.wait_time = randi() % 2 + 1

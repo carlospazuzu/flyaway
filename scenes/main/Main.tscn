@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://entities/background/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/travelled_distance/TravelledDistance.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/go/Go.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/obstacle_generator/ObstacleGenerator.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/final_score/FinalScore.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/game_timer/GameTimer.tscn" type="PackedScene" id=6]
 
 [node name="Main" type="Node2D"]
 
@@ -18,3 +20,9 @@ position = Vector2( 100, 465 )
 
 [node name="TravelledDistance" parent="." instance=ExtResource( 2 )]
 position = Vector2( 847.139, 13.5051 )
+
+[node name="FinalScore" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="GameTimer" parent="." instance=ExtResource( 6 )]
+autostart = true
