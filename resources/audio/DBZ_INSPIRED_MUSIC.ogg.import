@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DBZ_INSPIRED_MUSIC.ogg-1e9fb24b83718bfb0bf94ac5e45691f3.oggstr"
+
+[deps]
+
+source_file="res://resources/audio/DBZ_INSPIRED_MUSIC.ogg"
+dest_files=[ "res://.import/DBZ_INSPIRED_MUSIC.ogg-1e9fb24b83718bfb0bf94ac5e45691f3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
